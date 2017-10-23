@@ -1,0 +1,17 @@
+#!/usr/bin/env Rscript
+
+suppressMessages(library(ribiosArg))
+suppressMessages(library(ribiosUtils))
+scriptInit()
+
+usage <- paste("Usage:", scriptName(), " [-opt1 VALUE] [-opt2 VALUE] -infile FILE")
+
+argParse("opt1,1 opt2,1","infile", usage, strict=TRUE)
+
+cat("Program parameters:\n")
+cat(paste("Opt1:", argGet("opt1"), "\n"))
+cat(paste("Opt2:", argGet("opt2"), "\n"))
+cat(paste("infile:", argGet("infile"), "\n"))
+
+qqmsg(status=0)
+
