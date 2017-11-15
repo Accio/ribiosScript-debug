@@ -21,3 +21,5 @@ In case the optional arguments are given first, errors are raised but the messag
 ```{bash optFirstError}
 ./myRscript.Rscript -infile test.file -opt1 A -opt3 B
 ```
+
+In addition, if a parameter is not defined in either optargs or reqargs, when running argPresent, the warning message is not meaningful, since the parameter name is missing: PROBLEM: arg: ' is neither a required nor an optional argument. rarg_present uses rstr2c to duplicate the parameter name, but due to unknown reasons this is not done properly.
